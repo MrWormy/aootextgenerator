@@ -3,7 +3,7 @@ const pl = document.getElementById('player-list');
 let players = [];
 
 pl.addEventListener('input', e => {
-    console.log(e.currentTarget.value);
+    //console.log(e.currentTarget.value);
     players = e.currentTarget.value.split('\n').map(p => (p.startsWith('- [x]')) ? p.slice(6).replace(/ \([^)]*\)/, '') : null).filter(e => e !== null);
 }, true);
 
@@ -53,13 +53,18 @@ function generateText(type) {
                 'Have fun!\n' +
                 'Wørmy.\n')
             break;
+        case 'recap':
+            navigator.clipboard.writeText(new URL(`checklist/index.html?list=${btoa(encodeURIComponent(players.map(p => p.slice(6).replaceAll(';',',')).join(';')))}`, window.location).href);
+            break;
     }
 }
 
 const intro = document.getElementById('intro-mail');
 const list = document.getElementById('list-mail');
 const strategy = document.getElementById('strategy-mail');
+const recap = document.getElementById('checklist-recap');
 
 intro.addEventListener('click', generateText.bind(null, 'intro'), true);
 list.addEventListener('click', generateText.bind(null, 'list'), true);
 strategy.addEventListener('click', generateText.bind(null, 'strategy'), true);
+recap.addEventListener('click', generateText.bind(null, 'recap'), true);
