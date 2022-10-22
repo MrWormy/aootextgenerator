@@ -54,7 +54,7 @@ function generateText(type) {
                 'Wørmy.\n')
             break;
         case 'recap':
-            navigator.clipboard.writeText(new URL(`checklist/index.html?list=${btoa(encodeURIComponent(players.map(p => p.slice(6).replaceAll(';',',')).join(';')))}`, window.location).href);
+            navigator.clipboard.writeText(new URL(`checklist/index.html?list=${btoa(encodeURIComponent(players.map(p => p.slice(0,8).replaceAll(';',',')).join(';')))}`, window.location).href);
             break;
     }
 }
