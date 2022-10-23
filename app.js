@@ -41,11 +41,12 @@ function generateText(type) {
                 '\n' +
                 '\n' +
                 'At the start:\n' +
-                'Kirtny will launch a cavalry rally on our north obelisk and Natkun will put his garrison in it.\n' +
+                'Kirtny will launch a cavalry rally on our north obelisk.\n' +
                 'Wørmy will launch an archer rally on our south obelisk with his garrison.\n' +
                 '\n' +
                 'Main phase:\n' +
                 'Follow markers, fill garrisons, fill rallies and accompany them in open field.\n' +
+                'Always keep an eye on the obelisks, we must not lose them.\n' +
                 '\n' +
                 'Ark:\n' +
                 '4 to 5 minutes before the ark spawns, try to send as many marches as possible towards the middle and try and win the ark (that’s usually how we win the game :)).\n' +
