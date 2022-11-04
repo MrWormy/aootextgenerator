@@ -5,3 +5,8 @@
     margin: 4px 0;
     background-color: #e2e2e2;
 }
+
+p .check-item {
+    display: inline;
+    margin: 0 4px 0 0;
+}

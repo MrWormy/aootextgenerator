@@ -3,7 +3,11 @@ function generateCheckbox(name) {
     p.append(document.createTextNode(name));
     p.classList.add('check-item');
     p.addEventListener('click', () => {
-        p.parentNode.removeChild(p);
+        const parent = p.parentElement;
+        parent.removeChild(p);
+        if (parent.nextElementSibling) {
+            parent.nextElementSibling.append(p);
+        }
     }, false);
     return p;
 }
@@ -17,6 +21,5 @@ function parseChecklist(encodedCL, container) {
 
 (function (){
     const p = new URLSearchParams(window.location.search);
-    console.log(window.location.search, p)
-    if (p.has('list')) parseChecklist(p.get('list'), document.body);
+    if (p.has('list')) parseChecklist(p.get('list'), document.body.firstElementChild);
 })()
